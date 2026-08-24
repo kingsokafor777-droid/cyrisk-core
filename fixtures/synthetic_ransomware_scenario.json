@@ -1,0 +1,60 @@
+{
+  "asset_id": "asset-payments-api",
+  "completeness_note": "Synthetic fixture; no input is a real-world observation or forecast.",
+  "evidence_references": [
+    {
+      "description": "Synthetic payload-blind evidence reference for fixture validation.",
+      "evidence_id": "evidence-synthetic-control-gap",
+      "expires_on": "2099-12-31",
+      "integrity_hash": "7f9b8c2b4b452be484fe4ecf7f8d08ed6a9ca2f80d29c1238ccce47f4e2343a4",
+      "schema_version": "1.0",
+      "source_class": "synthetic"
+    }
+  ],
+  "factors": [
+    {
+      "central": "0.3",
+      "confidence": "low",
+      "distribution": "triangular",
+      "factor_id": "frequency-range",
+      "lower": "0.1",
+      "metric": "annual event frequency",
+      "rationale": "Sealed fixture assumption; not a threat-frequency estimate.",
+      "schema_version": "1.0",
+      "source_class": "synthetic",
+      "unit": "events-per-year",
+      "upper": "0.8"
+    },
+    {
+      "central": "25000",
+      "confidence": "low",
+      "distribution": "pert",
+      "factor_id": "recovery-range",
+      "lower": "10000",
+      "metric": "recovery loss component",
+      "rationale": "Sealed fixture assumption; not an operating cost estimate.",
+      "schema_version": "1.0",
+      "source_class": "synthetic",
+      "unit": "synthetic-usd",
+      "upper": "50000"
+    }
+  ],
+  "loss_components": [
+    {
+      "component_id": "loss-recovery",
+      "factor_ids": [
+        "recovery-range"
+      ],
+      "label": "Synthetic recovery component",
+      "rationale": "Exercises factor linkage only; no real loss is represented.",
+      "schema_version": "1.0",
+      "unit": "synthetic-usd"
+    }
+  ],
+  "loss_unit": "synthetic-usd",
+  "scenario_id": "scn-ransomware-payments",
+  "schema_version": "1.0",
+  "source_class": "synthetic",
+  "threat_event": "Synthetic ransomware execution",
+  "title": "Synthetic ransomware event against payments API"
+}
